@@ -1,7 +1,16 @@
 package com.github.hgxey6.weather.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Weather {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String cityName;
     private String timeZone;
     private String description;
@@ -12,6 +21,14 @@ public class Weather {
     private Double windSpeed;
 
     public Weather() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCityName() {
@@ -80,9 +97,14 @@ public class Weather {
 
     @Override
     public String toString() {
-        return "CurrentWeather{" +
-                "description='" + description + '\'' +
+        return "Weather{" +
+                "id=" + id +
+                ", cityName='" + cityName + '\'' +
+                ", timeZone='" + timeZone + '\'' +
+                ", description='" + description + '\'' +
                 ", temperature=" + temperature +
+                ", pressure=" + pressure +
+                ", humidity=" + humidity +
                 ", feelsLike=" + feelsLike +
                 ", windSpeed=" + windSpeed +
                 '}';
