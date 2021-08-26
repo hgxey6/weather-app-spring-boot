@@ -14,8 +14,9 @@ public class WeatherController {
     private CurrentWeatherService currentWeatherService;
     private WeatherDataService weatherDataService;
 
-    public WeatherController(CurrentWeatherService currentWeatherService) {
+    public WeatherController(CurrentWeatherService currentWeatherService, WeatherDataService weatherDataService) {
         this.currentWeatherService = currentWeatherService;
+        this.weatherDataService = weatherDataService;
     }
 
     @GetMapping("/current-weather")
