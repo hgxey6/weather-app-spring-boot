@@ -8,16 +8,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class WeatherService {
+public class WeatherDataService {
 
     private final WeatherRepository weatherRepository;
 
     @Autowired
-    public WeatherService(WeatherRepository weatherRepository) {
+    public WeatherDataService(WeatherRepository weatherRepository) {
         this.weatherRepository = weatherRepository;
     }
 
-    public void addWeather(Weather weather) {
+    public void saveWeather(Weather weather) {
         weatherRepository.save(weather);
     }
 
